@@ -1,4 +1,4 @@
-import { Mail, Twitter, Linkedin, Instagram, BrainCircuit } from 'lucide-react';
+import { Mail, Twitter, Linkedin, Instagram, Facebook,BrainCircuit } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '../ui/button';
 import Image from 'next/image';
