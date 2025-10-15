@@ -14,7 +14,7 @@ export default function JoinUs() {
               Become a Part of Our Community
             </h2>
             <p className="mt-4 text-lg leading-8 text-muted-foreground font-body">
-              Ready to take the next step in your journey? Join WiveZ Club today to unlock access to exclusive events, mentorship opportunities, and a network of inspiring women who are making a difference.
+              Ready to take the next step in your journey? Join WaveZ Club today to unlock access to exclusive events, mentorship opportunities, and a network of inspiring innovators who are making a difference.
             </p>
           </div>
           <Card className="shadow-2xl">
