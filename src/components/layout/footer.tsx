@@ -32,13 +32,13 @@ export default function Footer() {
             <h3 className="font-headline font-semibold mb-4">Follow Us</h3>
             <div className="flex gap-4">
               <Button variant="ghost" size="icon" asChild>
-                <a href="#" aria-label="Facebook"><Facebook className="w-5 h-5" />https://www.facebook.com/profile.php?id=61581686022084</a>
+                <a href="https://www.facebook.com/profile.php?id=61581686022084" aria-label="Facebook"><Facebook className="w-5 h-5" /></a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="#" aria-label="LinkedIn"><Linkedin className="w-5 h-5" />https://www.linkedin.com/in/wavez-club-34628738a</a>
+                <a href="https://www.linkedin.com/in/wavez-club-34628738a" aria-label="LinkedIn"><Linkedin className="w-5 h-5" /></a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="#" aria-label="Instagram"><Instagram className="w-5 h-5" />https://www.instagram.com/wavez.club</a>
+                <a href="https://www.instagram.com/wavez.club" aria-label="Instagram"><Instagram className="w-5 h-5" /></a>
               </Button>
             </div>
           </div>
