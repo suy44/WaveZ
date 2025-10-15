@@ -23,7 +23,7 @@ export default function Footer() {
             <div className="flex flex-col gap-2 font-body">
               <a href="mailto:info@wivezclub.com" className="flex items-center gap-2 hover:text-primary transition-colors">
                 <Mail className="w-4 h-4" />
-                info@wivezclub.com
+                wavez1995@gmail.com
               </a>
             </div>
           </div>
@@ -32,13 +32,13 @@ export default function Footer() {
             <h3 className="font-headline font-semibold mb-4">Follow Us</h3>
             <div className="flex gap-4">
               <Button variant="ghost" size="icon" asChild>
-                <a href="#" aria-label="Twitter"><Twitter className="w-5 h-5" /></a>
+                <a href="#" aria-label="Facebook"><Facebook className="w-5 h-5" />https://www.facebook.com/profile.php?id=61581686022084</a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="#" aria-label="LinkedIn"><Linkedin className="w-5 h-5" /></a>
+                <a href="#" aria-label="LinkedIn"><Linkedin className="w-5 h-5" />https://www.linkedin.com/in/wavez-club-34628738a</a>
               </Button>
               <Button variant="ghost" size="icon" asChild>
-                <a href="#" aria-label="Instagram"><Instagram className="w-5 h-5" /></a>
+                <a href="#" aria-label="Instagram"><Instagram className="w-5 h-5" />https://www.instagram.com/wavez.club</a>
               </Button>
             </div>
           </div>
@@ -46,7 +46,7 @@ export default function Footer() {
 
         <div className="border-t mt-8 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4">
           <p className="text-muted-foreground text-sm font-body">
-            © {new Date().getFullYear()} WiveZ Club. All rights reserved.
+            © {new Date().getFullYear()} WaveZ Club. All rights reserved.
           </p>
           <Link href="https://www.djabersemaoui.site" className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors">
             <BrainCircuit className="w-4 h-4" />
