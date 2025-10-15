@@ -21,30 +21,13 @@ export default function JoinUs() {
             <CardHeader>
               <CardTitle className="font-headline">Registration Form</CardTitle>
               <CardDescription className="font-body">
-                Fill out the form below to start your application.
+                Click the button below to fill out the form .. be a part of our family.
               </CardDescription>
             </CardHeader>
             <CardContent>
               <form className="space-y-4">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                        <Label htmlFor="first-name">First Name</Label>
-                        <Input id="first-name" placeholder="Kevin" />
-                    </div>
-                    <div className="space-y-2">
-                        <Label htmlFor="last-name">Last Name</Label>                        <Input id="last-name" placeholder="Hart" />
-                    </div>
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="email">Email Address</Label>
-                  <Input id="email" type="email" placeholder="personal@example.com" />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="message">Why do you want to join?</Label>
-                  <Textarea id="message" placeholder="Tell us a little about yourself and your goals from joining our club..." />
-                </div>
-                <Button type="submit" className="w-full" size="lg">
-                  Submit Application
+                <Button type="submit" href="https://docs.google.com/forms/d/e/1FAIpQLSdIyP1Z_Fd8_u9DbDWKN4V_piOr6RPekx3IzbNeRaAn6ckaCg/viewform?usp=preview" className="w-full" size="lg">
+                  Go to the forum
                 </Button>
               </form>
             </CardContent>
