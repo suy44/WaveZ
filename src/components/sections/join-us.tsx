@@ -26,9 +26,16 @@ export default function JoinUs() {
             </CardHeader>
             <CardContent>
               <form className="space-y-4">
-                <Button type="submit" href="https://docs.google.com/forms/d/e/1FAIpQLSdIyP1Z_Fd8_u9DbDWKN4V_piOr6RPekx3IzbNeRaAn6ckaCg/viewform?usp=preview" className="w-full" size="lg">
-                  Go to the forum
+                <Button asChild className="w-full" size="lg">
+                  <a 
+                    href="https://docs.google.com/forms/d/e/1FAIpQLSdIyP1Z_Fd8_u9DbDWKN4V_piOr6RPekx3IzbNeRaAn6ckaCg/viewform?usp=preview" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                  >
+                    Go to the form
+                  </a>
                 </Button>
+
               </form>
             </CardContent>
           </Card>
