@@ -17,7 +17,7 @@ export default function About() {
             Our Mission
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground font-body max-w-3xl mx-auto">
-            We are dedicated to fostering a supportive and inclusive environment where women can build meaningful connections, develop new skills, and advance their careers. We believe in the power of community to inspire change and create leaders.
+              We are dedicated to empowering young innovators to explore the intersection of creativity and technology. Through hands-on projects, teamwork, and mentorship, we aim to transform ideas into impactful solutions that shape a smarter and more connected future.         
           </p>
         </div>
 
