@@ -8,7 +8,7 @@ import FlipCountdown from "@/components/Countdown/CalendarCountdown";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronLeft, ChevronRight } from "lucide-react"; // modern icons
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function About() {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,12 +22,11 @@ export default function About() {
       prev === 0 ? founders.length - 1 : prev - 1
     );
 
-  // --- Auto slide logic ---
   useEffect(() => {
     if (!isPaused) {
       intervalRef.current = setInterval(() => {
         setCurrentIndex((prev) => (prev + 1) % founders.length);
-      }, 5000); // 5 seconds
+      }, 5000);
     }
     return () => clearInterval(intervalRef.current);
   }, [isPaused]);
@@ -35,6 +34,7 @@ export default function About() {
   return (
     <section id="about" className="py-20 sm:py-32">
       <div className="container">
+        {/* === Intro === */}
         <div className="text-center">
           <main className="flex flex-col items-center justify-center min-h-screen">
             <h1 className="text-4xl font-bold mb-10">🚀 WaveZ Open Day</h1>
@@ -43,6 +43,7 @@ export default function About() {
               Mark your calendar — don’t miss it!
             </p>
           </main>
+
           <h2 className="text-3xl font-headline font-bold tracking-tight text-foreground sm:text-4xl">
             Our Mission
           </h2>
@@ -55,33 +56,33 @@ export default function About() {
         </div>
 
         {/* === Carousel Section === */}
-        <div className="mt-20">
+        <div className="mt-28">
           <h3 className="text-2xl font-headline font-bold text-center tracking-tight text-foreground sm:text-3xl">
             Meet the Leaders
           </h3>
 
           <div
-            className="relative mt-16 flex items-center justify-center"
+            className="relative mt-20 flex items-center justify-center"
             onMouseEnter={() => setIsPaused(true)}
             onMouseLeave={() => setIsPaused(false)}
           >
             {/* Left Button */}
             <motion.div
               whileHover={{ scale: 1.1 }}
-              className="absolute -left-6 md:-left-10 z-10"
+              className="absolute left-[4%] sm:left-[8%] md:left-[12%] z-20"
             >
               <Button
                 size="icon"
                 variant="secondary"
                 onClick={prevSlide}
-                className="rounded-full shadow-lg backdrop-blur-md bg-background/80 hover:bg-primary/80 hover:text-white transition-all duration-300"
+                className="rounded-full shadow-lg backdrop-blur-md bg-background/80 hover:bg-primary hover:text-white transition-all duration-300 w-12 h-12"
               >
                 <ChevronLeft className="w-6 h-6" />
               </Button>
             </motion.div>
 
-            {/* Carousel container */}
-            <div className="relative w-full max-w-[350px] max-h-[600px] md:max-w-[520px] h-[700px] flex items-center justify-center overflow-hidden">
+            {/* Carousel Container */}
+            <div className="relative w-full max-w-[340px] sm:max-w-[440px] md:max-w-[620px] lg:max-w-[820px] xl:max-w-[950px] h-[520px] md:h-[560px] lg:h-[600px] flex items-center justify-center overflow-hidden">
               <AnimatePresence initial={false}>
                 {founders.map((founder, index) => {
                   const founderImage = PlaceHolderImages.find(
@@ -125,14 +126,14 @@ export default function About() {
                   return (
                     <motion.div
                       key={founder.id}
-                      className="absolute w-[320px] md:w-[420px]"
+                      className="absolute w-[320px] sm:w-[380px] md:w-[460px] lg:w-[500px]"
                       animate={{ x, scale, opacity, zIndex }}
                       transition={{ duration: 0.6, ease: "easeInOut" }}
                       style={{
                         filter: `blur(${blur}px)`,
                       }}
                     >
-                      <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 bg-background border border-border/40">
+                      <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 bg-background border border-border/40 h-[480px] md:h-[520px] lg:h-[560px] flex flex-col justify-between">
                         <CardHeader>
                           <div className="flex justify-center">
                             <Avatar className="h-24 w-24">
@@ -156,7 +157,7 @@ export default function About() {
                           </p>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-muted-foreground font-body px-4">
+                          <p className="text-muted-foreground font-body px-6 leading-relaxed">
                             {founder.bio}
                           </p>
                         </CardContent>
@@ -170,13 +171,13 @@ export default function About() {
             {/* Right Button */}
             <motion.div
               whileHover={{ scale: 1.1 }}
-              className="absolute -right-6 md:-right-10 z-10"
+              className="absolute right-[4%] sm:right-[8%] md:right-[12%] z-20"
             >
               <Button
                 size="icon"
                 variant="secondary"
                 onClick={nextSlide}
-                className="rounded-full shadow-lg backdrop-blur-md bg-background/80 hover:bg-primary/80 hover:text-white transition-all duration-300"
+                className="rounded-full shadow-lg backdrop-blur-md bg-background/80 hover:bg-primary hover:text-white transition-all duration-300 w-12 h-12"
               >
                 <ChevronRight className="w-6 h-6" />
               </Button>
