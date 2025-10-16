@@ -126,17 +126,17 @@ export default function About() {
                   return (
                     <motion.div
                       key={founder.id}
-                      className="absolute w-[320px] sm:w-[380px] md:w-[460px] lg:w-[500px]"
+                      className="absolute w-[320px] sm:w-[380px] md:w-[460px] lg:w-[520px]"
                       animate={{ x, scale, opacity, zIndex }}
                       transition={{ duration: 0.6, ease: "easeInOut" }}
                       style={{
                         filter: `blur(${blur}px)`,
                       }}
                     >
-                      <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 bg-background border border-border/40 h-[480px] md:h-[520px] lg:h-[560px] flex flex-col justify-between">
+                      <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 bg-background border border-border/40 h-[500px] md:h-[540px] lg:h-[600px] flex flex-col justify-between">
                         <CardHeader>
                           <div className="flex justify-center">
-                            <Avatar className="h-24 w-24">
+                            <Avatar className="h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36">
                               {founderImage && (
                                 <AvatarImage
                                   src={founderImage.imageUrl}
@@ -144,20 +144,20 @@ export default function About() {
                                   data-ai-hint={founderImage.imageHint}
                                 />
                               )}
-                              <AvatarFallback>
+                              <AvatarFallback className="text-xl">
                                 {founder.name.charAt(0)}
                               </AvatarFallback>
                             </Avatar>
                           </div>
-                          <CardTitle className="pt-4 font-headline">
+                          <CardTitle className="pt-5 font-headline text-lg md:text-xl lg:text-2xl">
                             {founder.name}
                           </CardTitle>
-                          <p className="text-sm text-primary font-semibold font-body">
+                          <p className="text-sm md:text-base lg:text-lg text-primary font-semibold font-body">
                             {founder.role}
                           </p>
                         </CardHeader>
                         <CardContent>
-                          <p className="text-muted-foreground font-body px-6 leading-relaxed">
+                          <p className="text-muted-foreground font-body px-6 leading-relaxed text-base md:text-lg lg:text-xl">
                             {founder.bio}
                           </p>
                         </CardContent>
