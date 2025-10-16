@@ -81,7 +81,7 @@ export default function About() {
             </motion.div>
 
             {/* Carousel container */}
-            <div className="relative w-full max-w-[400px] md:max-w-[520px] h-[600px] flex items-center justify-center overflow-hidden">
+            <div className="relative w-full max-w-[350px] md:max-w-[520px] h-[700px] flex items-center justify-center overflow-hidden">
               <AnimatePresence initial={false}>
                 {founders.map((founder, index) => {
                   const founderImage = PlaceHolderImages.find(
