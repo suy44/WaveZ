@@ -6,11 +6,13 @@ import { PlaceHolderImages } from "@/lib/placeholder-images";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
 import FlipCountdown from "@/components/Countdown/CalendarCountdown";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 
 export default function About() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef(null);
 
   const nextSlide = () =>
     setCurrentIndex((prev) => (prev + 1) % founders.length);
@@ -18,6 +20,16 @@ export default function About() {
     setCurrentIndex((prev) =>
       prev === 0 ? founders.length - 1 : prev - 1
     );
+
+  // --- Auto slide logic ---
+  useEffect(() => {
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % founders.length);
+      }, 5000); // change slide every 5s
+    }
+    return () => clearInterval(intervalRef.current);
+  }, [isPaused]);
 
   return (
     <section id="about" className="py-20 sm:py-32">
@@ -47,7 +59,11 @@ export default function About() {
           </h3>
 
           {/* --- Carousel Wrapper --- */}
-          <div className="relative mt-16 flex items-center justify-center">
+          <div
+            className="relative mt-16 flex items-center justify-center"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             <Button
               variant="ghost"
               onClick={prevSlide}
