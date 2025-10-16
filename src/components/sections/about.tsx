@@ -82,7 +82,7 @@ export default function About() {
             </motion.div>
 
             {/* Carousel Container */}
-            <div className="relative w-full max-w-[340px] sm:max-w-[440px] md:max-w-[620px] lg:max-w-[820px] xl:max-w-[950px] h-[520px] md:h-[560px] lg:h-[600px] flex items-center justify-center overflow-hidden">
+            <div className="relative w-full max-w-[340px] sm:max-w-[440px] md:max-w-[620px] lg:max-w-[820px] xl:max-w-[950px] h-[520px] md:h-[500px] lg:h-[500px] flex items-center justify-center overflow-hidden">
               <AnimatePresence initial={false}>
                 {founders.map((founder, index) => {
                   const founderImage = PlaceHolderImages.find(
