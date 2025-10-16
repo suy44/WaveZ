@@ -132,7 +132,7 @@ export default function About() {
                         filter: `blur(${blur}px)`,
                       }}
                     >
-                      <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 bg-background border border-border/40 h-[300px] sm:h-[500px] md:h-[500px] lg:h-[500px] flex flex-col justify-between">
+                      <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 bg-background border border-border/40 h-[300px] sm:h-[600px] md:h-[500px] lg:h-[500px] flex flex-col justify-between">
                         <CardHeader>
                           <div className="flex justify-center">
                             <Avatar className="h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36">
