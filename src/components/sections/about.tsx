@@ -81,7 +81,7 @@ export default function About() {
             </motion.div>
 
             {/* Carousel Container */}
-            <div className="relative w-full max-w-[340px] max-h-400 sm:max-w-[440px] md:max-w-[620px] lg:max-w-[820px] xl:max-w-[950px] h-[520px] md:max-h-[600px] lg:max-h-[600px] flex items-center justify-center overflow-hidden">
+            <div className="relative w-full max-w-[340px] max-h-400 sm:max-w-[440px] md:max-w-[620px] lg:max-w-[820px] xl:max-w-[950px] h-[520px] md:max-h-[600px] lg:max-h-[650px] flex items-center justify-center overflow-hidden">
               <AnimatePresence initial={false}>
                 {founders.map((founder, index) => {
                   const founderImage = PlaceHolderImages.find(
@@ -132,7 +132,7 @@ export default function About() {
                         filter: `blur(${blur}px)`,
                       }}
                     >
-                      <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 bg-background border border-border/40 h-[500px] md:h-[540px] lg:h-[600px] flex flex-col justify-between">
+                      <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 bg-background border border-border/40 h-[300px] md:h-[540px] lg:h-[600px] flex flex-col justify-between">
                         <CardHeader>
                           <div className="flex justify-center">
                             <Avatar className="h-28 w-28 md:h-32 md:w-32 lg:h-36 lg:w-36">
