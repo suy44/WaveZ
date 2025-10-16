@@ -1,124 +1,186 @@
-import { useState, useEffect } from 'react';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { founders } from '@/lib/data';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
-import FlipCountdown from '@/components/Countdown/CalendarCountdown';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
+"use client";
+
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { founders } from "@/lib/data";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import FlipCountdown from "@/components/Countdown/CalendarCountdown";
+import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useRef } from "react";
+import { Button } from "@/components/ui/button";
+import { ChevronLeft, ChevronRight } from "lucide-react"; // modern icons
 
 export default function About() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isPaused, setIsPaused] = useState(false);
+  const intervalRef = useRef(null);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % founders.length);
-  };
+  const nextSlide = () =>
+    setCurrentIndex((prev) => (prev + 1) % founders.length);
+  const prevSlide = () =>
+    setCurrentIndex((prev) =>
+      prev === 0 ? founders.length - 1 : prev - 1
+    );
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + founders.length) % founders.length);
-  };
-
-  // Auto scroll every 5 seconds
+  // --- Auto slide logic ---
   useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, []);
+    if (!isPaused) {
+      intervalRef.current = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % founders.length);
+      }, 5000); // 5 seconds
+    }
+    return () => clearInterval(intervalRef.current);
+  }, [isPaused]);
 
   return (
     <section id="about" className="py-20 sm:py-32">
       <div className="container">
         <div className="text-center">
-          <main className="flex flex-col items-center justify-center min-h-screen ">
+          <main className="flex flex-col items-center justify-center min-h-screen">
             <h1 className="text-4xl font-bold mb-10">🚀 WaveZ Open Day</h1>
             <FlipCountdown targetDate="2025-10-16T09:00:00" />
-            <p className="mt-6 text-gray-400">Mark your calendar — don’t miss it!</p>
+            <p className="mt-6 text-gray-400">
+              Mark your calendar — don’t miss it!
+            </p>
           </main>
           <h2 className="text-3xl font-headline font-bold tracking-tight text-foreground sm:text-4xl">
             Our Mission
           </h2>
           <p className="mt-4 text-lg leading-8 text-muted-foreground font-body max-w-3xl mx-auto">
-            We are dedicated to empowering young innovators to explore the intersection of creativity and technology. Through hands-on projects, teamwork, and mentorship, we aim to transform ideas into impactful solutions that shape a smarter and more connected future.
+            We are dedicated to empowering young innovators to explore the
+            intersection of creativity and technology. Through hands-on
+            projects, teamwork, and mentorship, we aim to transform ideas into
+            impactful solutions that shape a smarter and more connected future.
           </p>
         </div>
 
-        {/* === Leaders Section with Carousel === */}
-        <div className="mt-20 relative">
+        {/* === Carousel Section === */}
+        <div className="mt-20">
           <h3 className="text-2xl font-headline font-bold text-center tracking-tight text-foreground sm:text-3xl">
             Meet the Leaders
           </h3>
 
-          <div className="relative flex items-center justify-center mt-12 overflow-hidden">
+          <div
+            className="relative mt-16 flex items-center justify-center"
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
             {/* Left Button */}
-            <button
-              onClick={prevSlide}
-              className="absolute left-4 md:left-10 bg-background/80 backdrop-blur-sm border border-border hover:bg-primary/10 text-foreground rounded-full p-3 transition-all duration-300 shadow-md hover:scale-110 z-20"
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="absolute -left-6 md:-left-10 z-10"
             >
-              <ChevronLeft className="w-6 h-6" />
-            </button>
+              <Button
+                size="icon"
+                variant="secondary"
+                onClick={prevSlide}
+                className="rounded-full shadow-lg backdrop-blur-md bg-background/80 hover:bg-primary/80 hover:text-white transition-all duration-300"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </Button>
+            </motion.div>
 
-            {/* Slides */}
-            <div className="flex items-center justify-center relative w-full h-[400px] md:h-[480px]">
-              {founders.map((founder, index) => {
-                const offset = (index - currentIndex + founders.length) % founders.length;
+            {/* Carousel container */}
+            <div className="relative w-full max-w-[400px] md:max-w-[520px] h-[420px] flex items-center justify-center overflow-hidden">
+              <AnimatePresence initial={false}>
+                {founders.map((founder, index) => {
+                  const founderImage = PlaceHolderImages.find(
+                    (img) => img.id === founder.imageId
+                  );
 
-                let classNames =
-                  'absolute transition-all duration-700 ease-in-out transform w-[280px] md:w-[350px] h-[380px] md:h-[450px]';
-                let style = {};
+                  const offset = index - currentIndex;
+                  const isCenter = offset === 0;
+                  const isLeft =
+                    offset === -1 || offset === founders.length - 1;
+                  const isRight =
+                    offset === 1 || offset === -(founders.length - 1);
 
-                if (offset === 0) {
-                  // current card
-                  classNames += ' z-20 scale-100 opacity-100';
-                  style = { transform: 'translateX(0)' };
-                } else if (offset === 1) {
-                  // next card right
-                  classNames += ' z-10 scale-90 opacity-50 blur-[2px]';
-                  style = { transform: 'translateX(260px)' };
-                } else if (offset === founders.length - 1) {
-                  // previous card left
-                  classNames += ' z-10 scale-90 opacity-50 blur-[2px]';
-                  style = { transform: 'translateX(-260px)' };
-                } else {
-                  // hidden others
-                  classNames += ' opacity-0 scale-75';
-                  style = { transform: 'translateX(0)', pointerEvents: 'none' };
-                }
+                  let x = 0,
+                    scale = 1,
+                    blur = 0,
+                    opacity = 1,
+                    zIndex = 1;
 
-                const founderImage = PlaceHolderImages.find((img) => img.id === founder.imageId);
+                  if (isCenter) {
+                    scale = 1;
+                    zIndex = 3;
+                  } else if (isLeft) {
+                    x = "-65%";
+                    scale = 0.85;
+                    blur = 3;
+                    opacity = 0.7;
+                    zIndex = 2;
+                  } else if (isRight) {
+                    x = "65%";
+                    scale = 0.85;
+                    blur = 3;
+                    opacity = 0.7;
+                    zIndex = 2;
+                  } else {
+                    opacity = 0;
+                    scale = 0.5;
+                    zIndex = 0;
+                  }
 
-                return (
-                  <div key={founder.id} className={classNames} style={style}>
-                    <Card className="text-center shadow-lg hover:shadow-2xl transition-all duration-500 w-full h-full flex flex-col justify-between">
-                      <CardHeader>
-                        <div className="flex justify-center">
-                          <Avatar className="h-24 w-24">
-                            {founderImage && (
-                              <AvatarImage
-                                src={founderImage.imageUrl}
-                                alt={`Photo of ${founder.name}`}
-                                data-ai-hint={founderImage.imageHint}
-                              />
-                            )}
-                            <AvatarFallback>{founder.name.charAt(0)}</AvatarFallback>
-                          </Avatar>
-                        </div>
-                        <CardTitle className="pt-4 font-headline">{founder.name}</CardTitle>
-                        <p className="text-sm text-primary font-semibold font-body">{founder.role}</p>
-                      </CardHeader>
-                      <CardContent>
-                        <p className="text-muted-foreground font-body px-4">{founder.bio}</p>
-                      </CardContent>
-                    </Card>
-                  </div>
-                );
-              })}
+                  return (
+                    <motion.div
+                      key={founder.id}
+                      className="absolute w-[320px] md:w-[420px]"
+                      animate={{ x, scale, opacity, zIndex }}
+                      transition={{ duration: 0.6, ease: "easeInOut" }}
+                      style={{
+                        filter: `blur(${blur}px)`,
+                      }}
+                    >
+                      <Card className="text-center shadow-lg hover:shadow-xl transition-all duration-300 bg-background border border-border/40">
+                        <CardHeader>
+                          <div className="flex justify-center">
+                            <Avatar className="h-24 w-24">
+                              {founderImage && (
+                                <AvatarImage
+                                  src={founderImage.imageUrl}
+                                  alt={`Photo of ${founder.name}`}
+                                  data-ai-hint={founderImage.imageHint}
+                                />
+                              )}
+                              <AvatarFallback>
+                                {founder.name.charAt(0)}
+                              </AvatarFallback>
+                            </Avatar>
+                          </div>
+                          <CardTitle className="pt-4 font-headline">
+                            {founder.name}
+                          </CardTitle>
+                          <p className="text-sm text-primary font-semibold font-body">
+                            {founder.role}
+                          </p>
+                        </CardHeader>
+                        <CardContent>
+                          <p className="text-muted-foreground font-body px-4">
+                            {founder.bio}
+                          </p>
+                        </CardContent>
+                      </Card>
+                    </motion.div>
+                  );
+                })}
+              </AnimatePresence>
             </div>
 
             {/* Right Button */}
-            <button
-              onClick={nextSlide}
-              className="absolute right-4 md:right-10 bg-background/80 backdrop-blur-sm border border-border hover:bg-primary/10 text-foreground rounded-full p-3 transition-all duration-300 shadow-md hover:scale-110 z-20"
+            <motion.div
+              whileHover={{ scale: 1.1 }}
+              className="absolute -right-6 md:-right-10 z-10"
             >
-              <ChevronRight className="w-6 h-6" />
-            </button>
+              <Button
+                size="icon"
+                variant="secondary"
+                onClick={nextSlide}
+                className="rounded-full shadow-lg backdrop-blur-md bg-background/80 hover:bg-primary/80 hover:text-white transition-all duration-300"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </Button>
+            </motion.div>
           </div>
         </div>
       </div>
