@@ -23,23 +23,22 @@ export default function Hero() {
 
       <div className="relative container mx-auto h-full flex flex-col items-center justify-end text-center pb-20">
         <div className="backdrop-blur-sm bg-black/30 p-6 rounded-2xl">
-          {/* ✅ FIX: "The future" stays fixed like in first code */}
-          <div className="flex flex-wrap items-end justify-center text-center md:justify-start md:text-left space-x-2">
-            <div className="flex items-end justify-center space-x-2">
-              <TypingText
-                text={["Connect", "Develop", "Hack"]}
-                typingSpeed={75}
-                pauseDuration={1500}
-                showCursor={true}
-                cursorCharacter="|"
-                className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-6xl leading-none"
-                textColors={['#3b82e2', '#8b5cf6', '#06b6d4']}
-                variableSpeed={{ min: 50, max: 120 }}
-              />
-              <h1 className="font-headline font-bold tracking-tight text-foreground text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-none">
-                The future
-              </h1>
-            </div>
+          {/* prevent wrapping and stop the h1 from shrinking */}
+          <div className="flex items-end justify-center md:justify-start md:text-left space-x-4 flex-nowrap">
+            <TypingText
+              text={["Connect", "Develop", "Hack"]}
+              typingSpeed={75}
+              pauseDuration={1500}
+              showCursor={true}
+              cursorCharacter="|"
+              className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-6xl leading-none"
+              textColors={['#3b82e2', '#8b5cf6', '#06b6d4']}
+              variableSpeed={{ min: 50, max: 120 }}
+            />
+
+            <h1 className="font-headline font-bold tracking-tight text-foreground text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-none flex-shrink-0">
+              The future
+            </h1>
           </div>
 
           <p className="mt-6 text-lg max-w-2xl leading-8 text-foreground/80 font-body drop-shadow-[0_1px_4px_rgba(0,0,0,0.5)]">
