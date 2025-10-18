@@ -40,7 +40,7 @@ export default function Hero() {
           </h1>
         </div>
 
-        <p className="mt-6 text-lg max-w-3xl leading-8 text-foreground/80 font-body">
+        <p className="mt-6 text-xl max-w-3xl leading-8 text-foreground/80 font-body">
           A dynamic club fostering creativity and innovation in robotics, bringing together passionate minds
           to explore, build, and shape the future of technology.
         </p>
