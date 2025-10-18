@@ -23,23 +23,26 @@ export default function Hero() {
 
       <div className="relative container mx-auto h-full flex flex-col items-center justify-end text-center pb-20">
         <div className="backdrop-blur-sm bg-black/30 p-6 rounded-2xl">
-          {/* keep them in one horizontal row, prevent shifting by fixing typing width */}
-          <div className="flex items-end justify-center md:justify-start md:text-left space-x-4">
-            {/* IMPORTANT: inline-block + fixed width prevents layout shift */}
-            <span className="inline-block w-[12ch]">
-              <TypingText
-                text={["Connect", "Develop", "Hack"]}
-                typingSpeed={75}
-                pauseDuration={1500}
-                showCursor={true}
-                cursorCharacter="|"
-                className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-6xl leading-none"
-                textColors={['#3b82e2', '#8b5cf6', '#06b6d4']}
-                variableSpeed={{ min: 50, max: 120 }}
-              />
-            </span>
+          {/* Row containing typing area and fixed heading */}
+          <div className="flex items-end justify-center md:justify-start md:text-left gap-x-4">
+            {/* FIXED-SIZE BOX for typing: adjust w-[14ch] to match your longest word */}
+            <div className="relative inline-block w-[14ch] h-auto overflow-hidden" aria-hidden>
+              {/* Make the TypingText positioned absolutely so its width changes do not affect layout */}
+              <div className="absolute inset-y-0 left-0 flex items-end">
+                <TypingText
+                  text={["Connect", "Develop", "Hack"]}
+                  typingSpeed={75}
+                  pauseDuration={1500}
+                  showCursor={true}
+                  cursorCharacter="|"
+                  className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-6xl leading-none"
+                  textColors={['#3b82e2', '#8b5cf6', '#06b6d4']}
+                  variableSpeed={{ min: 50, max: 120 }}
+                />
+              </div>
+            </div>
 
-            {/* make h1 not shrink to avoid movement */}
+            {/* Heading won't shrink or move */}
             <h1 className="font-headline font-bold tracking-tight text-foreground text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-none flex-shrink-0">
               The future
             </h1>
