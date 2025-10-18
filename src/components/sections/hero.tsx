@@ -19,7 +19,7 @@ export default function Hero() {
           data-ai-hint={heroImage.imageHint}
         />
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-background/50 to-transparent" />
+      <div className="absolute inset-0 bg-blue-400-to-t from-background/50 via-background/50 to-transparent" />
 
     <div className="relative container mx-auto h-full flex flex-col items-center justify-end text-center pb-20">
       <div className="flex flex-wrap items-end justify-center text-center md:justify-start md:text-left space-x-2">
