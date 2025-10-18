@@ -14,7 +14,7 @@ export default function Footer() {
                 <span className="text-2xl font-bold font-headline">WiveZ Club</span>
             </Link>
             <p className="text-muted-foreground max-w-md font-body">
-              Empowering women to connect, learn, and lead in the world of technology and beyond.
+              Empowering members to connect, learn, and lead in the world of technology and innovation.
             </p>
           </div>
 
