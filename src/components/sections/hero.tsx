@@ -1,30 +1,61 @@
-import { Button } from '@/components/ui/button';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
-import Image from 'next/image';
-import Link from 'next/link';
+"use client";
+
+import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { PlaceHolderImages } from "@/lib/placeholder-images";
+import Image from "next/image";
+import Link from "next/link";
 import TypingText from "@/components/ui/shadcn-io/typing-text";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Hero() {
-  const heroImage = PlaceHolderImages.find((img) => img.id === 'hero-image');
+  // 1️⃣ Select multiple hero images
+  const heroImages = PlaceHolderImages.filter((img) =>
+    ["hero-image-1", "hero-image-2", "hero-image-3 , hero-image-4 , hero-image-5"].includes(img.id)
+  );
+
+  // 2️⃣ State for the current image index
+  const [current, setCurrent] = useState(0);
+
+  // 3️⃣ Change image every 5 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % heroImages.length);
+    }, 5000);
+    return () => clearInterval(interval);
+  }, [heroImages.length]);
 
   return (
-    <section id="hero" className="relative w-full h-[80vh] min-h-[500px] max-h-[720px]">
-      {heroImage && (
-        <Image
-          src={heroImage.imageUrl}
-          alt={heroImage.description}
-          fill
-          className="object-cover"
-          priority
-          data-ai-hint={heroImage.imageHint}
-        />
-      )}
+    <section
+      id="hero"
+      className="relative w-full h-[80vh] min-h-[500px] max-h-[720px] overflow-hidden"
+    >
+      {/* 4️⃣ Animate image transitions */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={current}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 1.5 }}
+          className="absolute inset-0"
+        >
+          <Image
+            src={heroImages[current].imageUrl}
+            alt={heroImages[current].description}
+            fill
+            className="object-cover"
+            priority
+          />
+        </motion.div>
+      </AnimatePresence>
 
-      <div className="absolute inset-0 bg-gradient-to-t from-background/100 via-background/0 to-transparent" />
+      {/* 5️⃣ Dark overlay for readability */}
       <div className="absolute inset-0 bg-black/40" />
 
+      {/* 6️⃣ Hero Text */}
       <div className="relative container mx-auto h-full flex flex-col items-center justify-end text-center pb-20">
-        <div className="flex flex-wrap items-end justify-center text-center md:justify-start md:text-left space-x-2">
+        <div className="flex flex-wrap items-end justify-center text-center space-x-2">
           <TypingText
             text={["Connect", "Develop", "Hack"]}
             typingSpeed={75}
@@ -32,7 +63,7 @@ export default function Hero() {
             showCursor={true}
             cursorCharacter="|"
             className="font-bold text-4xl sm:text-5xl md:text-6xl lg:text-6xl leading-none"
-            textColors={['#3b82e2', '#8b5cf6', '#06b6d4']}
+            textColors={["#3b82e2", "#8b5cf6", "#06b6d4"]}
             variableSpeed={{ min: 50, max: 120 }}
           />
           <h1 className="font-headline font-bold tracking-tight text-foreground text-2xl sm:text-3xl md:text-5xl lg:text-6xl leading-none">
