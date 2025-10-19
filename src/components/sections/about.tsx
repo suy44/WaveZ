@@ -35,13 +35,13 @@ export default function About() {
       <div className="container">
         {/* === Intro === */}
         <div className="text-center">
-          <main className="flex flex-col items-center justify-center min-h-screen">
+          {/*<main className="flex flex-col items-center justify-center min-h-screen">
             <h1 className="text-4xl font-bold mb-10">🚀 WaveZ Open Day</h1>
             <FlipCountdown targetDate="2025-10-16T09:00:00" />
             <p className="mt-6 text-gray-400">
               Mark your calendar — don’t miss it!
             </p>
-          </main>
+          </main>*/}
 
           <h2 className="text-3xl font-headline font-bold tracking-tight text-foreground sm:text-4xl">
             Our Mission
