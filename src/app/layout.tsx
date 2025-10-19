@@ -26,7 +26,7 @@ export default function RootLayout({
         />
       </head>
 <body className="bg-background font-body antialiased w-screen h-screen m-0 p-0 overflow-auto">
-  <div className="relative flex min-h-screen flex-col mx-2">
+  <div className="relative flex min-h-screen flex-col mx-4 md:mx-auto md:max-w-7xl">
     <Header />
     <main className="flex-1 flex flex-col w-full">
       {children}
