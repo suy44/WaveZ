@@ -11,7 +11,7 @@ import { motion, AnimatePresence } from "framer-motion";
 export default function Hero() {
   // 1️⃣ Select multiple hero images
   const heroImages = PlaceHolderImages.filter((img) =>
-    ["hero-image-1", "hero-image-2", "hero-image-3 , hero-image-4 , hero-image-5"].includes(img.id)
+    ["hero-image-1", "hero-image-2", "hero-image-3" , "hero-image-4" ].includes(img.id)
   );
 
   // 2️⃣ State for the current image index
