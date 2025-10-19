@@ -7,7 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import TypingText from "@/components/ui/shadcn-io/typing-text";
 import { motion, AnimatePresence } from "framer-motion";
-
+ 
 export default function Hero() {
   // 1️⃣ Select multiple hero images
   const heroImages = PlaceHolderImages.filter((img) =>
