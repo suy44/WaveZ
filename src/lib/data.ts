@@ -62,16 +62,9 @@ export const founders: Founder[] = [
   {
     id: 'founder-2',
     name: 'Ibrahim KEDDAR',
-    role: 'Secretary General',
+    role: 'Vice president',
     bio: 'Passionate learner and analytical thinker with 2 years of teamwork experience.',
     imageId: 'founder-2',
-  },
-  {
-    id:'founder-3',
-    name:'Maissoune ARACHE',
-    role:'Vice president',
-    bio:'Passionate about technology and design, constantly exploring new ways to create and innovate. Working toward developing a legendary game that will inspire players worldwide.',
-    imageId:'founder'
   },
   {
     id: 'founder-10',
