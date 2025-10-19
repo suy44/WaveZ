@@ -58,26 +58,54 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right">
-              <div className="flex flex-col gap-6 text-lg font-medium">
-                <Link href="/" className="flex items-center gap-2" onClick={() => setSheetOpen(false)}>
-                  <Image src="/logo.png" width={32} height={32} alt="WaveZ Club Logo" />
-                  <span className="font-bold font-headline">WaveZ Club</span>
-                </Link>
-                {navItems.map((item) => (
+                <div className="flex flex-col justify-between h-full text-lg font-medium">
+                  {/* Top section: logo + nav items */}
+                  <div className="flex flex-col gap-6">
+                    <Link
+                      href="/"
+                      className="flex items-center gap-2"
+                      onClick={() => setSheetOpen(false)}
+                    >
+                      <Image
+                        src="/logo.png"
+                        width={32}
+                        height={32}
+                        alt="WaveZ Club Logo"
+                      />
+                      <span className="font-bold font-headline">WaveZ Club</span>
+                    </Link>
+              
+                    {navItems.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="text-muted-foreground transition-colors hover:text-foreground"
+                        onClick={() => setSheetOpen(false)}
+                      >
+                        {item.title}
+                      </Link>
+                    ))}
+              
+                    <Button asChild>
+                      <Link href="#join-us" onClick={() => setSheetOpen(false)}>
+                        Join Now
+                      </Link>
+                    </Button>
+                  </div>
+              
+                  {/* Bottom section */}
                   <Link
-                    key={item.href}
-                    href={item.href}
+                    key="about-me"
+                    href="https://www.djabersemaoui.site"
                     className="text-muted-foreground transition-colors hover:text-foreground"
+                    style={{ display: "flex", alignItems: "flex-end" }}
                     onClick={() => setSheetOpen(false)}
+                    target="_blank"
                   >
-                    {item.title}
+                    About me
                   </Link>
-                ))}
-                <Button asChild >
-                  <Link href="#join-us" onClick={() => setSheetOpen(false)}>Join Now</Link>
-                </Button>
-              </div>
-            </SheetContent>
+                </div>
+              </SheetContent>
           </Sheet>
         </nav>
       </div>
