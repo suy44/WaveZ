@@ -84,3 +84,19 @@
     scroll-behavior: smooth;
   }
 }
+
+@layer utilities {
+  .glow-text {
+    text-shadow: 0 0 8px hsl(var(--primary)), 
+                 0 0 16px hsl(var(--primary)), 
+                 0 0 24px hsl(var(--primary));
+  }
+
+  .text-glow-cyan {
+    text-shadow: 0 0 8px #06b6d4, 0 0 16px #06b6d4, 0 0 24px #06b6d4;
+  }
+
+  .text-glow-red {
+    text-shadow: 0 0 8px #ef4444, 0 0 16px #ef4444, 0 0 24px #ef4444;
+  }
+}
