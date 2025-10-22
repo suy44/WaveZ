@@ -36,7 +36,7 @@ export default function JoinUs() {
                   </a>
                 </Button>
 */}    
-                <div style={{display:"flex" , justifyContent:"center"}}
+                <div style={{display:"flex" , justifyContent:"center"}}>
                 <p className="mt-4 text-lg text-red-400 w-fill" style={{justifyContent:"center"}}> The registration is closed</p>
                 </div>
               </form>
