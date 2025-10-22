@@ -37,7 +37,7 @@ export default function JoinUs() {
                 </Button>
 */}    
                 <div style={{display:"flex" , justifyContent:"center"}}>
-                <p className="text-2xl font-bold text-cyan-400 text-glow-cyan"> The registration is closed</p>
+                <p className="text-2xl font-bold text-cyan-400 text-glow-red"> The registration is closed</p>
                 </div>
               </form>
             </CardContent>
