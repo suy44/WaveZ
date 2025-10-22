@@ -25,7 +25,7 @@ export default function JoinUs() {
               </CardDescription>
             </CardHeader>
             <CardContent>
-              <form className="space-y-4">
+              <form className="space-y-4">{/*
                 <Button asChild className="w-full" size="lg">
                   <a 
                     href="https://docs.google.com/forms/d/e/1FAIpQLSdIyP1Z_Fd8_u9DbDWKN4V_piOr6RPekx3IzbNeRaAn6ckaCg/viewform?usp=preview" 
@@ -35,7 +35,8 @@ export default function JoinUs() {
                     Go to the form
                   </a>
                 </Button>
-
+*/}
+                <p className="mt-4 text-lg text-red w-fill"> The registration is closed</p>
               </form>
             </CardContent>
           </Card>
