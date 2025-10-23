@@ -8,20 +8,7 @@ export const navItems: NavItem[] = [
 ];
 
 export const events: Event[] = [
-  {
-    id: 'Open-Day',
-    title: 'WaveZ club open day',
-    date: 'October 16, 2025',
-    time: '9:00 AM - 12:00 AM',
-    location: 'University Campus',
-    description: 'Join us for a full day of tech talks, Representations, and networking with Club leaders.',
-    longDescription: 'Experience the WaveZ Club Open Day — a full-day event designed to introduce students to the world of innovation, creativity, and technology. Discover our projects, attend interactive demonstrations, and engage in inspiring discussions with our members and leaders. Whether you’re curious about joining the club, exploring new tech fields, or connecting with a community of passionate creators, this open day is the perfect opportunity to learn, share, and be part of the WaveZ spirit.',
-    imageId: 'event-1',
-    speakers: [
-        { name: 'Maisson Arache', title: 'First Host' },
-        { name :'Sahrane zeyd', title:'Second Host'}
-    ]
-  },
+
   
   {
     id: 'Linux-workshop',
