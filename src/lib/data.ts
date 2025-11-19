@@ -39,7 +39,7 @@ export const events: Event[] = [
     location: 'Tesala High School',
     description: 'Join us for a special visit to Tesala High School to explore university study fields and discover the exciting activities of our Wavez Club.',
     longDescription: 'During our visit to Tesala High School, students will have the opportunity to learn about various university study fields and gain insights into campus life. Our Wavez Club representatives will present engaging activities, projects, and initiatives, providing a firsthand look at how students can get involved and develop their skills. This event is designed to inspire, inform, and connect aspiring students with university opportunities and club experiences, offering guidance for their academic and extracurricular journeys.',
-    imageId: 'event-3',
+    imageId: 'event-1',
 },
 
   
