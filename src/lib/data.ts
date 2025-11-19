@@ -22,7 +22,7 @@ export const events: Event[] = [
   },
   
   {
-    id: 'Chess competition',
+    id: 'Chess-competition',
     title: 'Chess competition',
     date: 'November 23, 2025',
     time: 'Not fixed yet',
@@ -32,7 +32,7 @@ export const events: Event[] = [
     imageId: 'event-2',
   },
   {
-    id: 'High School Visit - Tesala',
+    id: 'HighSchoolVisit-Tesala',
     title: 'High School Visit - Tesala',
     date: 'November 19, 2025',
     time: 'Not fixed yet',
