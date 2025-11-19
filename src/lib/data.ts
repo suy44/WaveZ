@@ -32,7 +32,7 @@ export const events: Event[] = [
     imageId: 'event-2',
   },
   {
-    id: 'HighSchoolVisit-Tesala',
+    id: 'High-School-Visit-Tesala',
     title: 'High School Visit - Tesala',
     date: 'November 19, 2025',
     time: 'Not fixed yet',
