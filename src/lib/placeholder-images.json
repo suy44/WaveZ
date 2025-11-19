@@ -87,12 +87,7 @@
       "imageUrl" :"https://picbox.space/ib/GDEv9YLD9hZf7YV_1760441197.jpg",
       "imageHint" :"man portrait"
     },
-    {
-      "id": "event-1",
-      "description": "Image for the Annual Tech Summit event.",
-      "imageUrl" : "https://picbox.space/ib/9PSk7vl96WwNKSF_1760451820.jpg",
-      "imageHint": "tech conference"
-    },
+   
     {
       "id": "event-1",
       "description": "Image for the Leadership Workshop event.",
