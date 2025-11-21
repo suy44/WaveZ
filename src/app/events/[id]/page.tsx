@@ -85,8 +85,7 @@ export default function EventDetailPage({ params }: { params: { id: string } }) 
             <h2 className="text-2xl font-headline font-bold mb-4">Ready to Join?</h2>
             <p className="text-muted-foreground font-body mb-6">Secure your spot for this exciting event.</p>
             <Button size="lg">
-                <Ticket className="w-5 h-5 mr-2" />
-                Register Now
+                <Link href={event.link}>Register Now</Link>
             </Button>
         </div>
       </div>
