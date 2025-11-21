@@ -13,6 +13,7 @@ export interface Event {
   longDescription: string;
   imageId: string;
   speakers: { name: string; title: string }[];
+  link:string;
 }
 
 export interface Founder {
