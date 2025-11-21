@@ -18,7 +18,8 @@ export const events: Event[] = [
     longDescription: 'The Arduino Workshop immersed participants in the world of embedded systems. Designed for beginners and tech enthusiasts alike, the session introduced the basics of microcontrollers, circuit design, and C/C++ programming. Attendees learned how to connect sensors, control motors, and bring ideas to life through practical experiments and guided projects. By the end of the workshop, participants gained a solid understanding of how Arduino works and the confidence to create their own innovative hardware prototypes.',
     imageId: 'event-3',
     speakers: [
-      {name: 'Djaber SEMAOUI', title:'Trainer'}]
+      {name: 'Djaber SEMAOUI', title:'Trainer'}],
+    link:'#',
   },
   
   {
@@ -30,7 +31,8 @@ export const events: Event[] = [
     description: 'Join our Chess Competition to challenge your strategic thinking, sharpen your problem-solving skills, and engage in exciting matches with fellow enthusiasts in a competitive yet friendly environment.',
     longDescription: 'Immerse yourself in the strategic world of chess with our comprehensive Chess Competition. This event is designed for players of all levels who wish to test their skills, enhance their tactical thinking, and engage in intense, stimulating matches. Participants will have the opportunity to analyze positions, plan strategies, and learn from fellow competitors in a friendly yet challenging environment. Whether you’re a beginner eager to understand the fundamentals or an experienced player aiming to refine advanced techniques, this competition will provide a platform to sharpen your mind, build confidence, and enjoy the timeless game of chess to its fullest.',
     imageId: 'event-2',
-    speakers: []
+    speakers: [],
+    link:'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMMZzO2H4fQuLEZWjPsVOEQu1p7GfYFMmASN9Iylk_gabdLg/alreadyresponded?usp=header',
   },
   {
     id: 'High-School-Visit-Tesala',
@@ -41,7 +43,8 @@ export const events: Event[] = [
     description: 'Join us for a special visit to Tesala High School to explore university study fields and discover the exciting activities of our Wavez Club.',
     longDescription: 'During our visit to Tesala High School, students will have the opportunity to learn about various university study fields and gain insights into campus life. Our Wavez Club representatives will present engaging activities, projects, and initiatives, providing a firsthand look at how students can get involved and develop their skills. This event is designed to inspire, inform, and connect aspiring students with university opportunities and club experiences, offering guidance for their academic and extracurricular journeys.',
     imageId: 'event-1',
-    speakers: []
+    speakers: [],
+    link:'#',
 
 },
 
