@@ -107,6 +107,12 @@
       "imageHint": "people talking"
     },
     {
+      "id" : "event-5",
+      "description" : "Image for the community" , 
+      "imageUrl" : "https://picbox.space/ib/v6GvlRzRa3gzZDS_1764063864.png", 
+      "imageHint" : "event" 
+    },
+    {
       "id": "gallery-1",
       "description": "A photo from a past event showing members collaborating.",
       "imageUrl": "https://picbox.space/ib/CZEyqbb8F2Q3Spv_1760442182.jpg",
