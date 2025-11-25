@@ -96,13 +96,7 @@ export const founders: Founder[] = [
     bio:'experienced in chess clubs and chess tournaments, having multiple hobbies is what keeps my life smooth and stable that\'s why I keep learning new stuff every day and so everybody should do.',
     imageId: 'founder-6',
   },
-  {
-    id:'founder-9',
-    name: 'Mohammed AYADOUN',
-    role:'Leader of Finincial departement',
-    bio:'Mohamed Ayadoun is a driven young volunteer passionate about environmental causes, teamwork, and personal growth. Experienced in international projects and fluent in English and French, he combines his interest in electronics with a commitment to making a positive impact.',
-    imageId:'founder-9'
-  },
+  
   {
     id: 'founder-7',
     name: 'Mohamed Abdelaoui',
