@@ -9,44 +9,79 @@ export const navItems: NavItem[] = [
 
 export const events: Event[] = [
 {
-    id: 'Arduino-Workshop',
-    title: 'Arduino Workshop [Completed]',
-    date: 'This event has passed',
-    time: 'This event has passed',
-    location: 'University Campus',
-    description: 'Our Arduino Workshop brought participants together to explore the fundamentals of electronics and programming while building their own interactive projects.',
-    longDescription: 'The Arduino Workshop immersed participants in the world of embedded systems. Designed for beginners and tech enthusiasts alike, the session introduced the basics of microcontrollers, circuit design, and C/C++ programming. Attendees learned how to connect sensors, control motors, and bring ideas to life through practical experiments and guided projects. By the end of the workshop, participants gained a solid understanding of how Arduino works and the confidence to create their own innovative hardware prototypes.',
-    imageId: 'event-3',
-    speakers: [
-      {name: 'Djaber SEMAOUI', title:'Trainer'}],
-    link:'#',
-  },
-  
-  {
-    id: 'Chess-competition',
-    title: 'Chess competition',
-    date: 'November 23, 2025',
-    time: 'Not fixed yet',
-    location: 'University Campus',
-    description: 'Join our Chess Competition to challenge your strategic thinking, sharpen your problem-solving skills, and engage in exciting matches with fellow enthusiasts in a competitive yet friendly environment.',
-    longDescription: 'Immerse yourself in the strategic world of chess with our comprehensive Chess Competition. This event is designed for players of all levels who wish to test their skills, enhance their tactical thinking, and engage in intense, stimulating matches. Participants will have the opportunity to analyze positions, plan strategies, and learn from fellow competitors in a friendly yet challenging environment. Whether you’re a beginner eager to understand the fundamentals or an experienced player aiming to refine advanced techniques, this competition will provide a platform to sharpen your mind, build confidence, and enjoy the timeless game of chess to its fullest.',
-    imageId: 'event-2',
-    speakers: [],
-    link:'https://docs.google.com/forms/u/0/d/e/1FAIpQLSeMMZzO2H4fQuLEZWjPsVOEQu1p7GfYFMmASN9Iylk_gabdLg/alreadyresponded?usp=header',
-  },
-  {
-    id: 'High-School-Visit-Tesala',
-    title: 'High School Visit - Tesala',
-    date: 'November 19, 2025',
-    time: 'Not fixed yet',
-    location: 'Tesala High School',
-    description: 'Join us for a special visit to Tesala High School to explore university study fields and discover the exciting activities of our Wavez Club.',
-    longDescription: 'During our visit to Tesala High School, students will have the opportunity to learn about various university study fields and gain insights into campus life. Our Wavez Club representatives will present engaging activities, projects, and initiatives, providing a firsthand look at how students can get involved and develop their skills. This event is designed to inspire, inform, and connect aspiring students with university opportunities and club experiences, offering guidance for their academic and extracurricular journeys.',
-    imageId: 'event-1',
-    speakers: [],
-    link:'#',
-
+  id: 'Arduino-Workshop',
+  title: 'Arduino Workshop [Completed]',
+  date: 'This event has passed',
+  time: 'This event has passed',
+  location: 'University Campus',
+  description:
+    'Our Arduino Workshop brought participants together to explore the fundamentals of electronics and programming while building their own interactive projects.',
+  longDescription:
+    'The Arduino Workshop immersed participants in the world of embedded systems. Designed for beginners and tech enthusiasts alike, the session introduced the basics of microcontrollers, circuit design, and C/C++ programming. Attendees learned how to connect sensors, control motors, and bring ideas to life through practical experiments and guided projects. By the end, participants gained a strong understanding of Arduino and the confidence to develop their own hardware prototypes.',
+  imageId: 'event-3',
+  speakers: [{ name: 'Djaber SEMAOUI', title: 'Trainer' }],
+  link: '#',
 },
+
+{
+  id: 'Chess-Competition',
+  title: 'Chess Competition [Completed]',
+  date: 'This event has passed',
+  time: 'This event has passed',
+  location: 'University Campus',
+  description:
+    'Our Chess Competition gathered players of all levels to challenge their strategic thinking, enhance their problem-solving abilities, and engage in exciting matches in a friendly competitive atmosphere.',
+  longDescription:
+    'The Chess Competition offered participants the chance to immerse themselves in strategic gameplay while improving tactical decision-making. Players analyzed complex positions, developed strategies, and learned from diverse opponents in a supportive environment. Whether beginners or experienced competitors, attendees enjoyed a memorable event that strengthened critical thinking, boosted confidence, and celebrated the timeless art of chess.',
+  imageId: 'event-2',
+  speakers: [],
+  link: '#',
+},
+
+{
+  id: 'High-School-Visit-Tesala',
+  title: 'High School Visit - Tesala [Completed]',
+  date: 'This event has passed',
+  time: 'This event has passed',
+  location: 'Tesala High School',
+  description:
+    'Our visit to Tesala High School gave students the opportunity to explore university study fields and discover the exciting projects and initiatives of the Wavez Club.',
+  longDescription:
+    'The Tesala High School visit introduced students to various university programs, campus life, and the creative ecosystem of the Wavez Club. Representatives shared interactive demonstrations, showcased student projects, and provided guidance on academic pathways and extracurricular development. This event inspired students, encouraged curiosity, and helped them connect their high-school journey with future university opportunities.',
+  imageId: 'event-1',
+  speakers: [],
+  link: '#',
+},
+{
+  id: 'Web-Dev-Workshop',
+  title: 'Web Development Workshop (HTML, CSS, JS)',
+  date: 'Thursday',
+  time: '13:00 - 18:00',
+  location: 'University Campus',
+  description:
+    'A hands-on workshop where participants will learn the core foundations of modern web development using HTML, CSS, and JavaScript.',
+  longDescription:
+    'This Web Development Workshop introduces participants to the essential building blocks of front-end development. Through guided exercises, attendees will learn how to structure webpages with HTML, style them using CSS, and add interactivity with JavaScript. The session focuses on real-world examples, best practices, and practical mini-projects that help learners understand how modern websites are built from scratch. By the end of the workshop, participants will have the confidence to start creating clean, responsive, and dynamic web pages on their own.',
+  imageId: 'event-4',
+  speakers: [],
+  link: '#',
+},
+
+{
+  id: 'App-Dev-Workshop-Flutter',
+  title: 'App Development Workshop (Flutter)',
+  date: 'Thursday',
+  time: '13:00 - 18:00',
+  location: 'University Campus',
+  description:
+    'Learn how to build modern cross-platform mobile apps using Flutter in an intensive hands-on workshop.',
+  longDescription:
+    'The App Development Workshop with Flutter offers participants a practical introduction to one of the most powerful frameworks for building cross-platform mobile applications. Attendees will explore the fundamentals of Dart programming, widget-based UI design, and responsive layouts. Through step-by-step guidance, participants will build functional components, understand project structure, and get familiar with essential tools used in professional mobile development. By the end of the session, learners will be equipped with the skills to begin creating smooth, beautiful apps for both Android and iOS.',
+  imageId: 'event-5',
+  speakers: [],
+  link: '#',
+},
+
 
   
   
