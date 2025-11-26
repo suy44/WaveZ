@@ -53,35 +53,19 @@ export const events: Event[] = [
   link: '#',
 },
 {
-  id: 'Web-Dev-Workshop',
-  title: 'Web Development Workshop (HTML, CSS, JS)',
+  id: 'Web-and-App-Dev-Workshop',
+  title: 'Web & App Development Workshop (HTML, CSS, JS & Flutter)',
   date: 'Thursday',
   time: '13:00 - 18:00',
   location: 'University Campus',
   description:
-    'A hands-on workshop where participants will learn the core foundations of modern web development using HTML, CSS, and JavaScript.',
+    'A full-day hands-on workshop covering both modern web development (HTML, CSS, JS) and cross-platform app development using Flutter.',
   longDescription:
-    'This Web Development Workshop introduces participants to the essential building blocks of front-end development. Through guided exercises, attendees will learn how to structure webpages with HTML, style them using CSS, and add interactivity with JavaScript. The session focuses on real-world examples, best practices, and practical mini-projects that help learners understand how modern websites are built from scratch. By the end of the workshop, participants will have the confidence to start creating clean, responsive, and dynamic web pages on their own.',
+    'This combined workshop brings together the fundamentals of both web and mobile development in one intensive learning experience. Participants will start by exploring the core building blocks of the web—HTML for structure, CSS for styling, and JavaScript for interactivity—through practical exercises and mini-projects. The second part of the session introduces Flutter for app development, covering Dart basics, widget-based UI design, and the essential tools for building cross-platform mobile applications. By the end of the day, attendees will have a solid understanding of how to build responsive websites and beautiful mobile apps, gaining the confidence to begin developing full-stack digital products.',
   imageId: 'event-4',
   speakers: [],
-  link: '#',
-},
-
-{
-  id: 'App-Dev-Workshop-Flutter',
-  title: 'App Development Workshop (Flutter)',
-  date: 'Thursday',
-  time: '13:00 - 18:00',
-  location: 'University Campus',
-  description:
-    'Learn how to build modern cross-platform mobile apps using Flutter in an intensive hands-on workshop.',
-  longDescription:
-    'The App Development Workshop with Flutter offers participants a practical introduction to one of the most powerful frameworks for building cross-platform mobile applications. Attendees will explore the fundamentals of Dart programming, widget-based UI design, and responsive layouts. Through step-by-step guidance, participants will build functional components, understand project structure, and get familiar with essential tools used in professional mobile development. By the end of the session, learners will be equipped with the skills to begin creating smooth, beautiful apps for both Android and iOS.',
-  imageId: 'event-5',
-  speakers: [],
-  link: '#',
-},
-
+  link: 'https://docs.google.com/forms/d/e/1FAIpQLSeX1QS0zM1mMYO_Jc0mBMtDYxdJQk8bNFt2OubAu_UPS4qemg/viewform?usp=dialog',
+}
 
   
   
